@@ -50,7 +50,7 @@ function CreateEvent() {
   return (
     <>
       <div className='max-w-xl mx-auto mt-10 p-6 bg-white shadow-md rounded-xl border'>
-        <h1 className='text-2xl font-bold text-blue-600 mb-4'>Create New Event</h1>
+        <h1 className='text-center text-2xl font-bold text-blue-600 mb-4'>Create New Event</h1>
         {message && <div className='mb-4 p-3 bg-green-100 text-green-800 rounded'>{message}</div>}
 
         <form onSubmit={handleSubmit} className='space-y-5'>

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const User = require('../models/Users');
 const Event = require('../models/Events');
 
 // Create Event
@@ -28,7 +27,7 @@ const createEvent = async (req, res) => {
 const getEvents = async (req, res) => {
     try {
         const events = await Event.find();
-        console.log(events);
+        // console.log(events);
         res.status(200).json(events);
     } catch (error) {
         console.log(error);

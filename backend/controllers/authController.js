@@ -76,9 +76,14 @@ const login = async (req, res) => {
 
 const getMe = async (req, res) => {
     try {
-        const user = await User.findById(req.user.id).select("-password");
-        if (!user) return res.status(404).json({ message: "User not found!" });
-        res.json(user);
+        // const user = await User.findById(req.user.id).select("-password");
+        if (!req.user) return res.status(404).json({ message: "User not found!" });
+        res.json({
+            id: req.user.id,
+            name: req.user.name,
+            email: req.user.email,
+            role: req.user.role
+        });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Server error!" })
